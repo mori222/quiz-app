@@ -1,0 +1,125 @@
+/* Scss Document */
+@charset "UTF-8";
+
+/* CSS Document */
+@import "_variables.scss";
+
+.quiz{
+    background: $color_gradation-light-green;
+    min-height: 100vh;
+    padding: 0 3rem 7.5rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    .top{
+        @include flex;
+        position: relative;
+        width: 100%;
+        a{
+            width: 1.8rem;
+            height: 1.8rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .progress_bar{
+            .number{
+                text-align: center;
+                font-size: 1.6rem;
+                font-family: 'Avenir Next', sans-serif;
+                font-weight: bold;
+                color: $color_gray-80;
+                .current_number{
+                    font-size: 4rem;
+                    color: $color_green;
+                }
+            }
+            .all_bar{
+                width: 25rem;
+                height: 1rem;
+                border-radius: 999px;
+                position: relative;
+                background: #fff;
+                .current_bar{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 1rem;
+                    border-radius: 999px;
+                    background: $color_green;
+                }
+            }
+        }
+    }
+    h2{
+        @include flex;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.5;
+    }
+    ul{
+        .option{
+            width: 100%;
+            background: #fff;
+            border-radius: 999px;
+            border: 1px solid $color_gray_20;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 1.6rem 2.4rem;
+            .number{
+                color: $color_gray-40;
+                font-family: 'Avenir Next', sans-serif;
+                font-weight: bold;
+                padding-right: 1rem;
+            }
+            + li{
+                margin-top: 0.8rem;
+            }
+            &.selected{
+                border: 1px solid $color_gray-20;
+                color: $color_gray-20;
+                .number{
+                    color: $color_gray-20;
+                }
+            }
+            &.incorrect{
+                color: $color_gray-60;
+                border: 1px solid $color_gray-60;
+                .number{
+                    color: #fff;
+                    position: relative;
+                    &::after{
+                        content: '×';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translate(-10%, -50%);
+                        font-size: 2rem;
+                        font-weight: bold;
+                        color: $color_gray-60;
+                        font-weight: bold;
+                    }
+                }
+            }
+            &.correct{
+                background: $color_light-orange!important;
+                color: $color_orange!important;
+                border: 1px solid $color_orange!important;
+                .number{
+                    position: relative;
+                    color: $color_light-orange;
+                    &::after{
+                        content: '〇';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        transform: translateX(-30%);
+                        font-size: 2rem;
+                        font-weight: bold;
+                        color: $color_orange;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

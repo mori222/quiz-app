@@ -1,0 +1,27 @@
+/* Scss Document */
+/* CSS Document */
+/*------------------------------mixin bg------------------------------*/
+/*------------------------------mixin flex------------------------------*/
+header {
+  background: #fff;
+  height: 4.4rem;
+  width: 100%;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.08);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+@media only screen and (min-width: 700px) {
+  header {
+    max-width: 390px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+header h1 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 4.4rem;
+}/*# sourceMappingURL=header.modules.css.map */

@@ -1,0 +1,35 @@
+/* Scss Document */
+/* CSS Document */
+/*------------------------------mixin bg------------------------------*/
+/*------------------------------mixin flex------------------------------*/
+.course {
+  background: #F8F7F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 10rem 3rem 14rem;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+.course li {
+  width: calc((100% - 3rem) / 3);
+  height: 16rem;
+  background: linear-gradient(135deg, #62CDB2, #92D879);
+}
+.course li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+.course li a p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #fff;
+}/*# sourceMappingURL=course.module.css.map */

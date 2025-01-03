@@ -1,0 +1,92 @@
+/* Scss Document */
+@charset "UTF-8";
+
+/* CSS Document */
+@import "_variables.scss";
+
+.result{
+    background: $color_grandation-light-orange;
+    padding: 5rem 0rem 0;
+    min-height: 100vh;
+    .illust_wrap{
+        margin: 0 3rem;
+        figure{
+            width: 100%;
+        }
+        picture{
+            width: 20rem;
+            margin: 0 auto;
+            margin-top: -14rem;
+        }
+    }
+    .correct_count{
+        margin: 0 3rem;
+        text-align: center;
+        width: 33rem;
+        background: #fff;
+        border-radius: 0.8rem;
+        padding: 3.2rem 0;
+        .head{
+            background: $color_light-orange;
+            color: $color_orange;
+            font-weight: bold;
+            font-size: 1.4rem;
+            display: inline-block;
+            border-radius: 99px;
+            padding: 0.8rem 2.4rem;
+        }
+        .count{
+            font-family: 'Avenir Next', sans-serif;
+            font-size: 2.4rem;
+            color: $color_gray-80;
+            font-weight: 600;
+            .correct_answer{
+                color: $color_orange;
+                font-size: 6.4rem;
+            }
+        }
+    }
+    a{
+        margin: 2.4rem 3rem 0;
+        background: $color_orange;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        height: 5.6rem;
+        width: 33rem;
+        @include flex;
+        border-radius: 0.8rem;
+        box-shadow: 0 0.8rem 0.8rem rgba($color: #894F1D, $alpha: 0.1);
+        transition: all 0.3s ease;
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+    .incorrect_quiz{
+        width: 100%;
+        background: #fff;
+        padding: 2rem 3rem;
+        margin-top: 4rem;
+        .head{
+            font-weight: bold;
+            color: $color_green;
+            font-size: 1.4rem;
+            padding-bottom: 1.6rem;
+            border-bottom: 1px solid $color_green;
+        }
+        ul{
+            li{
+                padding: 1.2em 0;
+                border-bottom: 1px solid $color_gray-20;
+                line-height: 1.5;
+                .question{
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                }
+                .answer{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}

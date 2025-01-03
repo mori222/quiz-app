@@ -1,0 +1,27 @@
+/* Scss Document */
+@charset "UTF-8";
+
+/* CSS Document */
+@import "_variables.scss";
+
+header{
+    background: #fff;
+    height: 4.4rem;
+    width: 100%;
+    box-shadow: 0 0.5rem 0.5rem rgba($color: #000000, $alpha: 0.08);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    @include pc{
+        max-width: 390px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    h1{
+        font-weight: bold;
+        text-align: center;
+        font-size: 1.6rem;
+        line-height: 4.4rem;
+    }
+}

@@ -1,0 +1,61 @@
+/* Scss Document */
+/* CSS Document */
+/*------------------------------mixin bg------------------------------*/
+/*------------------------------mixin flex------------------------------*/
+.login, .register {
+  background: #F8F7F3;
+  min-height: 100vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login form, .register form {
+  width: 100%;
+}
+.login form .formItem label, .register form .formItem label {
+  font-size: 1.6rem;
+  width: 100%;
+}
+.login form .formItem input, .register form .formItem input {
+  padding: 1.6rem 0.8rem;
+  font-size: 1.4rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(85, 85, 85, 0.4);
+}
+.login form .formItem input::-moz-placeholder, .register form .formItem input::-moz-placeholder {
+  color: rgba(85, 85, 85, 0.2);
+}
+.login form .formItem input::placeholder, .register form .formItem input::placeholder {
+  color: rgba(85, 85, 85, 0.2);
+}
+.login form .formItem + .formItem, .register form .formItem + .formItem {
+  margin-top: 2.4rem;
+}
+.login form button, .register form button {
+  margin-top: 4rem;
+  width: 100%;
+  background: #555;
+  color: #fff;
+  padding: 2rem 0;
+  font-size: 1.6rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+.login form button:hover, .register form button:hover {
+  opacity: 0.6;
+}
+.login p, .register p {
+  margin-top: 1.6rem;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  font-size: 1.4rem;
+  color: rgba(85, 85, 85, 0.8);
+}
+.login p:hover, .register p:hover {
+  opacity: 0.6;
+}/*# sourceMappingURL=login.module.css.map */

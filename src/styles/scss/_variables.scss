@@ -1,0 +1,47 @@
+$color_black: #555;
+$color_gray-80: rgba($color_black, 0.8);
+$color_gray-60: rgba($color_black, 0.6);
+$color_gray-40: rgba($color_black, 0.4);
+$color_gray-20: rgba($color_black, 0.2);
+$color_cream: #F8F7F3;
+
+$color_green: #57BBA0;
+$color_gradation-green: linear-gradient(135deg, #62CDB2, #92D879);
+$color_gradation-light-green: linear-gradient(135deg, #E5F7EE, #D3F0E9);
+
+$color_orange: #EA8933;
+$color_light-orange: #FEF0D3;
+$color_grandation-light-orange: linear-gradient(135deg, #FFF1CC, #FBD7D1);
+
+
+$media-pc: 700px;
+
+@mixin pc {
+  @media only screen and (min-width: $media-pc ) {
+    @content;
+  }
+}
+
+/*------------------------------mixin bg------------------------------*/
+@mixin bg-cover{
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+}
+@mixin bg-contain{
+	background-repeat:no-repeat;
+	background-size:contain;
+	background-position:center;
+}
+/*------------------------------mixin flex------------------------------*/
+@mixin flex{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+@mixin flex-column{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+}

@@ -1,0 +1,43 @@
+/* Scss Document */
+@charset "UTF-8";
+
+/* CSS Document */
+@import "_variables.scss";
+
+.footer{
+    background: #fff;
+    width: 100%;
+    padding: 0.8rem 4rem 4rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    @include pc{
+        max-width: 390px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    ul{
+        @include flex;
+        justify-content: space-between;
+        li{
+            @include flex-column;
+            text-align: center;
+            img{
+                width: 1.8rem;
+            }
+            p{
+                font-size: 1rem;
+                margin-top: 0.8rem;
+            }
+            &.active{
+                img{
+                    filter: brightness(0) saturate(100%) invert(75%) sepia(9%) saturate(1956%) hue-rotate(113deg) brightness(88%) contrast(82%);
+                }
+                p{
+                    color: $color_green;
+                }
+            }
+        }
+    }
+}

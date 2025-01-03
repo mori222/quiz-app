@@ -1,0 +1,62 @@
+/* Scss Document */
+
+@charset "UTF-8";
+
+/* CSS Document */
+@import "_variables.scss";
+
+/*------------------------------基本設定------------------------------*/
+html{
+	scroll-behavior: smooth;
+	font-size:2.56410256410256vw;
+	@include pc{
+		font-size: 10px;
+	}
+}
+img,source{
+	width:100%;
+	height: auto
+}
+main{
+	flex:1;
+}
+.wrap{
+	font-family: 'Noto Sans JP', sans-serif;
+	height: 100vh;
+	margin:0 auto;
+	max-width: 700px;
+	width:100%;
+	overflow:hidden;
+	color: $color_black;
+	font-size: 1.6rem;
+	overflow-y: scroll;
+	@include pc{
+		max-width: 390px;
+	}
+	&::-webkit-scrollbar{
+		display: none;
+	}
+}
+.font-en{
+	font-family: 'Avenir Next', sans-serif;
+}
+.pc-only{
+	display:none;
+	@include pc{
+		display:block;
+	}
+}
+.sp-only{
+	display:block;
+	@include pc{
+		display:none;
+	}
+}
+section{
+	position:relative;
+	width:100%;
+	margin:0 auto;
+}
+picture{
+	display:block;
+}
