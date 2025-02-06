@@ -37,12 +37,15 @@ const QuizPage: React.FC = () => {
 
         if (isCorrect) {
             setScore(score + 1);
-            updateStudyData({
-                totalProblems: studyData.totalProblems + 1,
-                correctAnswers: studyData.correctAnswers + (isCorrect ? 1 : 0),
-                incorrectAnswers: studyData.incorrectAnswers + (isCorrect ? 0 : 1),
-            });
-        } else {
+        }
+
+        updateStudyData({
+            totalProblems: studyData.totalProblems + 1,
+            correctAnswers: studyData.correctAnswers + (isCorrect ? 1 : 0),
+            incorrectAnswers: studyData.incorrectAnswers + (!isCorrect ? 1 : 0)
+        });
+
+        if (!isCorrect) {
             setIncorrectQuestions(prev => [
                 ...prev,
                 {
@@ -67,7 +70,7 @@ const QuizPage: React.FC = () => {
         <div className={styles.quiz}>
             <div className={styles.top}>
                 <Link href="/course">
-                    <figure><Image src="/images/icon_close.svg" alt="戻る" /></figure>
+                    <figure><Image src="/images/icon_close.svg" alt="戻る" width={24} height={24} /></figure>
                 </Link>
                 <div className={styles.progress_bar}>
                     <p className={styles.number}><span className={styles.current_number}>{currentQuestionIndex + 1}</span> / {quizLevel.questions.length}</p>
