@@ -12,20 +12,19 @@ const QuizPage: React.FC = () => {
     const router = useRouter();
     const params = useParams();
     const level = params.level;
-
-    // quizLevelの取得
     const quizLevel = quizzes.find(quiz => quiz.id === Number(level));
-
-    // フックをトップにまとめる
+    
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [correctOptionIndex, setCorrectOptionIndex] = useState<number | null>(null);
     const [incorrectQuestions, setIncorrectQuestions] = useState<{ question: string; correctAnswer: string; }[]>([]);
-
     const [studyData, updateStudyData] = useStudyData();
 
-    // quizLevelがない場合は早期リターン
+    useEffect(() => {
+        // 必要に応じてuseEffectの処理をここに記述
+    }, [currentQuestionIndex, score, incorrectQuestions, level, quizLevel?.questions.length]);
+
     if (!quizLevel) {
         return <div>クイズが見つかりません。</div>;
     }
@@ -63,11 +62,6 @@ const QuizPage: React.FC = () => {
             }
         }, 1000);
     };
-
-    // useEffect は条件付きではなくトップに配置
-    useEffect(() => {
-        // 必要に応じてuseEffectの処理をここに記述
-    }, [currentQuestionIndex, score, incorrectQuestions, level, quizLevel?.questions.length]);
 
     return (
         <div className={styles.quiz}>
