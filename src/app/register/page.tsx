@@ -42,6 +42,7 @@ const Register: React.FC = () => {
                 setError(data.message || '登録に失敗しました');
             }
         } catch (err) {
+            console.error('ネットワークエラーが発生しました', err);
             setError('ネットワークエラーが発生しました');
         }
     };

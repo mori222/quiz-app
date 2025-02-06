@@ -3,10 +3,10 @@
 import React from 'react';
 import styles from '../styles/css/header.modules.css';
 
-const Header: React.FC<{ title: string }> = ({ title }) => {
+const Header: React.FC = () => {
     return (
         <header className={styles.header}>
-            <h1>{title}</h1>
+            <h1>Quiz Demosite</h1>
         </header>
     )
 }

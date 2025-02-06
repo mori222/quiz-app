@@ -6,7 +6,7 @@ import useStudyData from '@/utils/useStudyData';
 import styles from '@/styles/css/progress.module.css';
 
 const Mydata = () => {
-    const [studyData, updateStudyData] = useStudyData();
+    const [studyData] = useStudyData();
 
     return (
         <div className={styles.progress}>

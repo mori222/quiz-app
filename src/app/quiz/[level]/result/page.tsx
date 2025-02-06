@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "@/styles/css/result.module.css";
 import { useSearchParams } from 'next/navigation';
-
+import Image from 'next/image';
 const ResultPage = () => {
     const searchParams = useSearchParams();
     const score = searchParams.get('score');
@@ -28,9 +28,9 @@ const ResultPage = () => {
     return (
         <div className={styles.result}>
             <div className={styles.illust_wrap}>
-                <figure><img src="/images/deco_paper.svg" alt="紙吹雪" /></figure>
+                <figure><Image src="/images/deco_paper.svg" alt="紙吹雪" width={100} height={100} /></figure>
                 <picture>
-                    <img src={imageSrc} alt="結果イラスト" />
+                    <Image src={imageSrc} alt="結果イラスト" width={100} height={100} />
                 </picture>
             </div>
             <div className={styles.correct_count}>

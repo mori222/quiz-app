@@ -1,27 +1,36 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { quizzes } from '@/utils/data';
 import { useRouter, useParams } from 'next/navigation';
 import styles from '@/styles/css/quiz.module.css';
 import Link from 'next/link';
 import useStudyData from '@/utils/useStudyData';
+import Image from 'next/image';
 
 const QuizPage: React.FC = () => {
     const router = useRouter();
     const params = useParams();
     const level = params.level;
+
+    // quizLevelの取得
     const quizLevel = quizzes.find(quiz => quiz.id === Number(level));
 
-    if (!quizLevel) return <div>クイズが見つかりません。</div>;
-
+    // フックをトップにまとめる
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [correctOptionIndex, setCorrectOptionIndex] = useState<number | null>(null);
-    const currentQuestion = quizLevel.questions[currentQuestionIndex];
     const [incorrectQuestions, setIncorrectQuestions] = useState<{ question: string; correctAnswer: string; }[]>([]);
+
     const [studyData, updateStudyData] = useStudyData();
+
+    // quizLevelがない場合は早期リターン
+    if (!quizLevel) {
+        return <div>クイズが見つかりません。</div>;
+    }
+
+    const currentQuestion = quizLevel.questions[currentQuestionIndex];
 
     const handleAnswer = (index: number, isCorrect: boolean) => {
         setSelectedOption(index);
@@ -33,7 +42,6 @@ const QuizPage: React.FC = () => {
                 totalProblems: studyData.totalProblems + 1,
                 correctAnswers: studyData.correctAnswers + (isCorrect ? 1 : 0),
                 incorrectAnswers: studyData.incorrectAnswers + (isCorrect ? 0 : 1),
-                studyMinutes: studyData.studyMinutes + 5,
             });
         } else {
             setIncorrectQuestions(prev => [
@@ -42,7 +50,7 @@ const QuizPage: React.FC = () => {
                     question: currentQuestion.question,
                     correctAnswer: currentQuestion.answer
                 }
-            ])
+            ]);
         }
 
         setTimeout(() => {
@@ -56,11 +64,16 @@ const QuizPage: React.FC = () => {
         }, 1000);
     };
 
+    // useEffect は条件付きではなくトップに配置
+    useEffect(() => {
+        // 必要に応じてuseEffectの処理をここに記述
+    }, [currentQuestionIndex, score, incorrectQuestions, level, quizLevel?.questions.length]);
+
     return (
         <div className={styles.quiz}>
             <div className={styles.top}>
                 <Link href="/course">
-                    <figure><img src="/images/icon_close.svg" alt="戻る" /></figure>
+                    <figure><Image src="/images/icon_close.svg" alt="戻る" /></figure>
                 </Link>
                 <div className={styles.progress_bar}>
                     <p className={styles.number}><span className={styles.current_number}>{currentQuestionIndex + 1}</span> / {quizLevel.questions.length}</p>
