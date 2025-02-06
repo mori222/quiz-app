@@ -1,0 +1,67 @@
+/* Scss Document */
+/* CSS Document */
+/*------------------------------mixin bg------------------------------*/
+/*------------------------------mixin flex------------------------------*/
+.progress {
+  margin-top: 4.4rem;
+  padding: 5.6rem 3rem;
+  background: linear-gradient(135deg, #E5F7EE, #D3F0E9);
+  min-height: 100vh;
+  padding: 3.2rem 3rem 7.5rem;
+  color: #555;
+}
+.progress .container {
+  background: #fff;
+  padding: 3rem 2rem;
+  border-radius: 0.8rem;
+}
+.progress .container .chartContainer {
+  position: relative;
+}
+.progress .container .chartContainer canvas {
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 2.4rem;
+  width: 16rem !important;
+  height: 16rem !important;
+}
+.progress .container .chartContainer .number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: #57BBA0;
+  font-size: 4rem;
+}
+.progress .container .chartContainer .number .small {
+  color: rgba(85, 85, 85, 0.8);
+  font-size: 1.2rem;
+}
+.progress .container .progress_number {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5;
+}
+.progress .container .bottom {
+  padding-top: 2.4rem;
+  border-top: solid 0.1rem rgba(85, 85, 85, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  row-gap: 2.4rem;
+}
+.progress .container .bottom li {
+  width: 50%;
+  text-align: center;
+  line-height: 1.5;
+}
+.progress .container .bottom li p {
+  font-size: 1.2rem;
+}
+.progress .container .bottom li p span {
+  font-size: 1.8rem;
+}/*# sourceMappingURL=progress.module.css.map */

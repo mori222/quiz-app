@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "../../styles/css/login.module.css";
 
 const Login: React.FC = () => {
-    const [email, setEmail] = useState("");
+    const [id, setId] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -16,12 +16,12 @@ const Login: React.FC = () => {
         <div className={styles.login}>
             <form onSubmit={handleSubmit} className={styles.form}>
                 <div className={styles.formItem}>
-                    <label htmlFor="email">メールアドレス</label>
+                    <label htmlFor="id">ID</label>
                     <input
-                        type="email"
-                        placeholder="quiz@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        type="id"
+                        placeholder="yourid"
+                        value={id}
+                        onChange={(e) => setId(e.target.value)}
                         required
                     />
                 </div>

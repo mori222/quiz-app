@@ -19,11 +19,11 @@ const Layout = ({ children, title }: LayoutProps) => {
     <html lang="ja">
       <body>
         <div className="wrap">
-          <Header title={title} />
+          {!pathname.includes('/quiz') && !pathname.includes('/result') && <Header title={title} />}
           <main>
             {children}
           </main>
-          {pathname !== '/login' && pathname !== '/register' && <Footer />}
+          {!pathname.includes('/quiz') && !pathname.includes('/result') && !pathname.includes('/login') && !pathname.includes('/register') && <Footer />}
         </div>
       </body>
     </html>

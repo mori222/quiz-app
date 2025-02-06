@@ -3,17 +3,46 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "../../styles/css/login.module.css";
+import { useRouter } from 'next/navigation';
 
 const Register: React.FC = () => {
-    const [email, setEmail] = useState("");
+    const [id, setId] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [nickname, setNickname] = useState("");
-    const handleSubmit = (e:React.FormEvent) => {
+    const [error, setError] = useState("");
+    const router = useRouter();
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if(password !== confirmPassword) {
+        setError("");
+
+        if (password !== confirmPassword) {
             alert("パスワードが一致しません");
             return;
+        }
+
+        try {
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id, password, nickname }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert(data.message);
+                // 登録成功後にログインページにリダイレクト
+                router.push('/login');
+            } else {
+                // エラーメッセージを表示
+                setError(data.message || '登録に失敗しました');
+            }
+        } catch (err) {
+            setError('ネットワークエラーが発生しました');
         }
     };
 
@@ -31,12 +60,12 @@ const Register: React.FC = () => {
                     />
                 </div>
                 <div className={styles.formItem}>
-                    <label htmlFor="email">メールアドレス</label>
+                    <label htmlFor="id">ID</label>
                     <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="quiz@example.com"
+                        type="text"
+                        value={id}
+                        onChange={(e) => setId(e.target.value)}
+                        placeholder="yourid"
                         required
                     />
                 </div>
@@ -60,6 +89,7 @@ const Register: React.FC = () => {
                         required
                     />
                 </div>
+                {error && <p className={styles.error}>{error}</p>}
                 <button type="submit">登録</button>
             </form>
             <p>

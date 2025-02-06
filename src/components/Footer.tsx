@@ -24,12 +24,6 @@ const Footer: React.FC = () => {
                         <p>学習データ</p>
                     </Link>
                 </li>
-                <li className={pathname === '/mypage' ? styles.active : ''}>
-                    <Link href="/mypage">
-                        <Image src="/images/icon_mypage.svg" alt="マイページ" width={24} height={24} />
-                        <p>マイページ</p>
-                    </Link>
-                </li>
             </ul>
         </footer>
     );

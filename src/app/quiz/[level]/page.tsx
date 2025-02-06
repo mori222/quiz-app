@@ -5,6 +5,7 @@ import { quizzes } from '@/utils/data';
 import { useRouter, useParams } from 'next/navigation';
 import styles from '@/styles/css/quiz.module.css';
 import Link from 'next/link';
+import useStudyData from '@/utils/useStudyData';
 
 const QuizPage: React.FC = () => {
     const router = useRouter();
@@ -20,12 +21,20 @@ const QuizPage: React.FC = () => {
     const [correctOptionIndex, setCorrectOptionIndex] = useState<number | null>(null);
     const currentQuestion = quizLevel.questions[currentQuestionIndex];
     const [incorrectQuestions, setIncorrectQuestions] = useState<{ question: string; correctAnswer: string; }[]>([]);
+    const [studyData, updateStudyData] = useStudyData();
+
     const handleAnswer = (index: number, isCorrect: boolean) => {
         setSelectedOption(index);
         setCorrectOptionIndex(currentQuestion.options.findIndex(option => option === currentQuestion.answer));
 
         if (isCorrect) {
             setScore(score + 1);
+            updateStudyData({
+                totalProblems: studyData.totalProblems + 1,
+                correctAnswers: studyData.correctAnswers + (isCorrect ? 1 : 0),
+                incorrectAnswers: studyData.incorrectAnswers + (isCorrect ? 0 : 1),
+                studyMinutes: studyData.studyMinutes + 5,
+            });
         } else {
             setIncorrectQuestions(prev => [
                 ...prev,

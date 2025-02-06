@@ -1,0 +1,73 @@
+/* Scss Document */
+@charset "UTF-8";
+
+/* CSS Document */
+@import "_variables.scss";
+
+.progress{
+    margin-top: 4.4rem;
+    padding: 5.6rem 3rem;
+    background: $color_gradation-light-green;
+    min-height: 100vh;
+    padding: 3.2rem 3rem 7.5rem;
+    color: $color_black;
+
+    .container{
+        background: #fff;
+        padding: 3rem 2rem;
+        border-radius: 0.8rem;
+
+        .chartContainer{
+            position: relative;
+
+            canvas{
+                margin: 0 auto;
+                margin-top: 1rem;
+                margin-bottom: 2.4rem;
+                width: 16rem!important;
+                height: 16rem!important;
+            }
+            .number{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-weight: bold;
+                color: $color_green;
+                font-size: 4rem;
+
+                .small{
+                    color: $color_gray-80;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .progress_number{
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .bottom{
+            padding-top: 2.4rem;
+            border-top: solid 0.1rem $color_gray-20;
+            @include flex;
+            flex-wrap: wrap;
+            font-weight: bold;
+            row-gap: 2.4rem;
+            li{
+                width: 50%;
+                text-align: center;
+                line-height: 1.5;
+                p{
+                    font-size: 1.2rem;
+                    span{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
