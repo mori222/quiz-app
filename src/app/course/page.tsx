@@ -8,17 +8,19 @@ import styles from "../../styles/css/course.module.css";
 const Course: React.FC =() => {
 
     return (
-        <ul className={styles.course}>
-            {quizzes.map((quiz) => (
-                <li key={quiz.id}>
-                    <Link href={`/quiz/${quiz.id}`}>
-                        <p>
-                        {quiz.title}
-                    </p>
-                    </Link>
-                </li>
-            ))}
-        </ul>
+        <div className={styles.course_wrap}>
+            <ul className={styles.course}>
+                {quizzes.map((quiz) => (
+                    <li key={quiz.id}>
+                        <Link href={`/quiz/${quiz.id}`}>
+                            <p>
+                            {quiz.title}
+                        </p>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 }
 

@@ -24,9 +24,6 @@
   width: 100%;
   border-bottom: 1px solid rgba(85, 85, 85, 0.4);
 }
-.login form .formItem input::-moz-placeholder, .register form .formItem input::-moz-placeholder {
-  color: rgba(85, 85, 85, 0.2);
-}
 .login form .formItem input::placeholder, .register form .formItem input::placeholder {
   color: rgba(85, 85, 85, 0.2);
 }
