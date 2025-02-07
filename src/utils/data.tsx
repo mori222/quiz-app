@@ -5,7 +5,7 @@ export const quizzes = [
         description: "レベル1の説明",
         questions: [
             {
-                question: "「CPC」の意味として正しいものは？",
+                question: "「CPC」とは？",
                 options: ["クリック単価", "広告表示回数", "コンバージョン数"],
                 answer: "クリック単価",
             },
@@ -33,7 +33,7 @@ export const quizzes = [
                 answer: "検索連動型広告",
             },
             {
-                question: "「SEO」の意味は？",
+                question: "「SEO」とは？",
                 options: [
                     "検索エンジン最適化",
                     "検索エンジン運用術",
@@ -51,7 +51,7 @@ export const quizzes = [
                 answer: "目標とする成果数",
             },
             {
-                question: "「PV」の説明として正しいものは？",
+                question: "「PV」とは？",
                 options: [
                     "広告がクリックされた回数",
                     "購入された商品の数",
@@ -69,7 +69,7 @@ export const quizzes = [
                 answer: "最初のページだけ見て離脱した割合",
             },
             {
-                question: "「リターゲティング広告」とは何を指すか？",
+                question: "「リターゲティング広告」とは？",
                 options: [
                     "検索エンジンの結果ページで表示される広告",
                     "過去にサイトを訪れたユーザーに再び広告を配信する手法",
@@ -111,7 +111,7 @@ export const quizzes = [
                 answer: "ユーザーの生涯価値",
             },
             {
-                question: "「CPA」の説明として正しいものは？",
+                question: "「CPA」とは？",
                 options: [
                     "1件のコンバージョンにかかった広告費",
                     "広告の品質スコア",
@@ -160,7 +160,7 @@ export const quizzes = [
                 options: [
                     "過去にサイトを訪れたユーザーへ広告を配信する",
                     "新規ユーザーへの広告配信",
-                    "新規ユーザーへの広告配信"
+                    "購入したことがあるユーザーへの広告配信"
                 ],
                 answer: "過去にサイトを訪れたユーザーへ広告を配信する",
             },
@@ -198,7 +198,7 @@ export const quizzes = [
                 answer: "広告がクリックされる度に料金が発生する広告モデル",
             },
             {
-                question: "「CTR」の意味は？",
+                question: "「CTR」とは？",
                 options: [
                     "広告費用対効果",
                     "クリック率",
